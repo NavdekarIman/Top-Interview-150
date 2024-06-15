@@ -8,7 +8,6 @@ Welcome to the Top-Interview-150 repository! This repository contains my solutio
 - [Solutions](#Solutions)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
-- [License](#)
 
 ### Introduction
 
