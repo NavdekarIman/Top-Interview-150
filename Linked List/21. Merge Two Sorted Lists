@@ -1,0 +1,32 @@
+/*     21. Merge Two Sorted Lists       */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+ class Solution {
+    ListNode merge(ListNode L1, ListNode L2){
+        // if (L1 == null) {
+        //     return L2;
+        // } else if (L2 == null) 
+        //     return L1; 
+        if (L1 == null) return L2;
+        if (L2 == null) return L1;
+
+        if (L1.val < L2.val) {
+            L1.next = merge(L1.next, L2);
+            return L1;
+        } else {
+            L2.next = merge(L2.next, L1);
+            return L2;
+        }
+    }
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        return merge(list1, list2);
+    }
+}
