@@ -1,0 +1,33 @@
+class Solution {
+    public int romanToInt(String s){
+        int largest = 0;
+        int result = 0;
+        //ulta loop
+        for( int i = s.length() - 1; i >= 0; i--){
+            int curr = valueFromChar(s.charAt(i));
+            if ( curr < largest){
+                result -= curr;
+            }
+            else{
+                result += curr;
+                if( curr > largest){
+                    largest = curr;
+                }
+            }
+        }
+        return result;
+    }
+    //function for input roman
+    private static int valueFromChar( char c){
+        switch( c ){
+            case 'I' : return 1;
+            case 'V' : return 5;           
+            case 'X' : return 10;
+            case 'L' : return 50;
+            case 'C' : return 100;
+            case 'D' : return 500;
+            case 'M' : return 1000;
+            default : throw new IllegalArgumentException("Invalid Roman numeral character: " + c);
+        }
+    }
+}
